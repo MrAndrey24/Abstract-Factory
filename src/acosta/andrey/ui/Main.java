@@ -118,6 +118,8 @@ public class Main {
                 break;
 
 
+            default:
+                System.out.printf("Error: Unknown");
         }
     }
 
