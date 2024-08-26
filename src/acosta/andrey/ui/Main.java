@@ -13,54 +13,42 @@ public class Main {
     static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
-        // write your code here
-
-        int opcion = -1;
+        int option;
         do {
-            mostarMenu();
-            opcion = leerOpcion();
-            ejecutarAccion(opcion);
-        } while (opcion != 10);
+            showMenu();
+            option = readOption();
+            executeAction(option);
+        } while (option != 10);
     }
 
-    public static void mostarMenu() {
-        out.println();
-        out.println("-----------Menu------------");
-        out.println("Seleccione su categoria de platillos de su preferencia...");
-        out.println("----------------------------------------------------------------");
-        out.println("Carnes");
-        out.println();
-        out.println("1. Ternera");
-        out.println("2. T-Bone");
-        out.println("3. Carne mechada");
-        out.println();
-        out.println("Pastas");
-        out.println();
-        out.println("4. Espaguetis");
-        out.println("5. Lasaña");
-        out.println("6. Ravioles");
-        out.println();
-        out.println("Ensaladas");
-        out.println();
-        out.println("7. E.Cesar");
-        out.println("8. E.Capresse");
-        out.println("9. E.Primavera");
-        out.println();
-        out.println("10. Salir");
-
-
+    public static void showMenu() {
+        out.println("""
+        \n-----------Menu------------
+        Select your preferred dish category...
+        ----------------------------------------------------------------
+        Meats
+        \n1. Beef
+        2. T-Bone
+        3. Shredded meat
+        \nPastas
+        \n4. Spaghetti
+        5. Lasagna
+        6. Ravioli
+        \nSalads
+        \n7. Caesar Salad
+        8. Caprese Salad
+        9. Spring Salad
+        \n10. Exit
+    """);
     }
 
-    public static int leerOpcion() throws IOException {
-        out.println();
-        out.println("Ingrese la opcion");
-        out.println();
+    public static int readOption() throws IOException {
+        out.println("\nEnter the option: \n");
         return Integer.parseInt(in.readLine());
     }
 
-
-    public static void ejecutarAccion(int pOpcion) throws IOException {
-        Gestor.leerOpcionPlatillo(pOpcion);
+    public static void executeAction(int pOption) throws IOException {
+        Gestor.leerOpcionPlatillo(pOption);
     }
 
 

@@ -1,125 +1,74 @@
 package acosta.andrey.cl;
 
-import acosta.andrey.fabrica_Abstracta.ComidaAbstracta;
-import acosta.andrey.fabrica_concreta.Fabrica_Carne;
-import acosta.andrey.fabrica_concreta.Fabrica_Ensalada;
-import acosta.andrey.fabrica_concreta.Fabrica_Pasta;
-import acosta.andrey.producto_abstracto.Comida;
+import acosta.andrey.fabrica_Abstracta.FoodAbstract;
+import acosta.andrey.fabrica_concreta.Factory_Meat;
+import acosta.andrey.fabrica_concreta.Factory_Pasta;
+import acosta.andrey.fabrica_concreta.Factory_Salad;
+import acosta.andrey.producto_abstracto.Food;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Gestor {
 
-    private static final ArrayList<Comida> tComidas = new ArrayList<>();
+    private static final ArrayList<Food> T_FOODS = new ArrayList<>();
 
 
-    public static String crearFabricaComidas(ComidaAbstracta fabrica) {
-        Comida objComida = fabrica.crearComida();
-        nuevaComida(objComida);
-        return objComida.obtener_info_comida();
+    public static String crearFabricaComidas(FoodAbstract fabrica) {
+        Food objFood = fabrica.createFood();
+        nuevaComida(objFood);
+        return objFood.get_info_food();
     }
 
-    private static void nuevaComida(Comida pobjCoComida) {
-        tComidas.add(pobjCoComida);
+    private static void nuevaComida(Food pobjCoFood) {
+        T_FOODS.add(pobjCoFood);
     }
 
-    public static String informacionComida() {
-        String datos = "";
-        for (Comida tComida : tComidas) {
-            datos = tComida.obtener_info_comida() + "\n";
-        }
-        return datos;
-    }
-
-    public static String infoCarne() {
-        String datos = "";
-
-        for (Comida tComida : tComidas) {
-            if (Objects.equals(tComida.tipo(), "Carne"))
-                datos = tComida.obtener_info_comida() + "\n";
-
-        }
-        return datos;
-
-    }
-
-    public static String infoPasta() {
-        String datos = "";
-
-        for (Comida tComida : tComidas) {
-            if (Objects.equals(tComida.tipo(), "Pasta"))
-                datos = tComida.obtener_info_comida() + "\n";
-
-        }
-        return datos;
-
-    }
-
-    public static String infoEnsalada() {
-        String datos = "";
-
-        for (Comida tComida : tComidas) {
-            if (Objects.equals(tComida.tipo(), "Ensalada"))
-                datos = tComida.obtener_info_comida() + "\n";
-
-        }
-        return datos;
-
-    }
 
     public static void leerOpcionPlatillo(int pOpcion) {
-        ComidaAbstracta comidita;
+        FoodAbstract comidita;
+        String foodName;
         switch (pOpcion) {
             case 1 -> {
-                String ter = "Ternera";
-                comidita = new Fabrica_Carne();
-                System.out.println(crearFabricaComidas(comidita) + ter);
+                comidita = new Factory_Meat();
+                foodName = "Ternera";
             }
             case 2 -> {
-                String tbo = "T-Bone";
-                comidita = new Fabrica_Carne();
-                System.out.println(crearFabricaComidas(comidita) + tbo);
+                comidita = new Factory_Meat();
+                foodName = "T-Bone";
             }
             case 3 -> {
-                String mechada = "Carne mechada";
-                comidita = new Fabrica_Carne();
-                System.out.println(crearFabricaComidas(comidita) + mechada);
+                comidita = new Factory_Meat();
+                foodName = "Carne mechada";
             }
             case 4 -> {
-                String espa = "Espaguetis";
-                comidita = new Fabrica_Pasta();
-                System.out.println(crearFabricaComidas(comidita) + espa);
+                comidita = new Factory_Pasta();
+                foodName = "Espaguetis";
             }
             case 5 -> {
-                String lasann = "Lasaña";
-                comidita = new Fabrica_Pasta();
-                System.out.println(crearFabricaComidas(comidita) + lasann);
+                comidita = new Factory_Pasta();
+                foodName = "Lasaña";
             }
             case 6 -> {
-                String raviour = "Ravioles";
-                comidita = new Fabrica_Pasta();
-                System.out.println(crearFabricaComidas(comidita) + raviour);
+                comidita = new Factory_Pasta();
+                foodName = "Ravioles";
             }
             case 7 -> {
-                String cesar = " Cesar ";
-                comidita = new Fabrica_Ensalada();
-                System.out.println(crearFabricaComidas(comidita) + cesar);
+                comidita = new Factory_Salad();
+                foodName = "Cesar";
             }
             case 8 -> {
-                String capre = "Capresse";
-                comidita = new Fabrica_Ensalada();
-                System.out.println(crearFabricaComidas(comidita) + capre);
+                comidita = new Factory_Salad();
+                foodName = "Capresse";
             }
             case 9 -> {
-                String primave = "Primavera";
-                comidita = new Fabrica_Ensalada();
-                System.out.println(crearFabricaComidas(comidita) + primave);
+                comidita = new Factory_Salad();
+                foodName = "Primavera";
             }
             default -> {
+                return;
             }
         }
-
+        System.out.println(crearFabricaComidas(comidita) + foodName);
     }
 
 

@@ -1,5 +1,5 @@
 package acosta.andrey.producto_concreto.ensalada;
 
-public class Capresse  extends Ensalada {
+public class Capresse  extends Salad {
 
 }
