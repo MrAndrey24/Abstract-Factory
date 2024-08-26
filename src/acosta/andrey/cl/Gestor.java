@@ -1,10 +1,10 @@
 package acosta.andrey.cl;
 
-import acosta.andrey.fabrica_Abstracta.FoodAbstract;
+import acosta.andrey.factory_Abstract.FoodAbstract;
 import acosta.andrey.fabrica_concreta.Factory_Meat;
 import acosta.andrey.fabrica_concreta.Factory_Pasta;
 import acosta.andrey.fabrica_concreta.Factory_Salad;
-import acosta.andrey.producto_abstracto.Food;
+import acosta.andrey.product_abstract.Food;
 
 import java.util.ArrayList;
 
@@ -30,7 +30,7 @@ public class Gestor {
         switch (pOpcion) {
             case 1 -> {
                 comidita = new Factory_Meat();
-                foodName = "Ternera";
+                foodName = "Beef";
             }
             case 2 -> {
                 comidita = new Factory_Meat();
@@ -38,15 +38,15 @@ public class Gestor {
             }
             case 3 -> {
                 comidita = new Factory_Meat();
-                foodName = "Carne mechada";
+                foodName = "LardedMeat";
             }
             case 4 -> {
                 comidita = new Factory_Pasta();
-                foodName = "Espaguetis";
+                foodName = "Spaghetti";
             }
             case 5 -> {
                 comidita = new Factory_Pasta();
-                foodName = "Lasaña";
+                foodName = "Lasagna";
             }
             case 6 -> {
                 comidita = new Factory_Pasta();

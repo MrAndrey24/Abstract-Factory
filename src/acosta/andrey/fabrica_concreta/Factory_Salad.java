@@ -1,8 +1,8 @@
 package acosta.andrey.fabrica_concreta;
 
-import acosta.andrey.fabrica_Abstracta.FoodAbstract;
-import acosta.andrey.producto_abstracto.Food;
-import acosta.andrey.producto_concreto.ensalada.Salad;
+import acosta.andrey.factory_Abstract.FoodAbstract;
+import acosta.andrey.product_abstract.Food;
+import acosta.andrey.product_concrect.salad.Salad;
 
 public class Factory_Salad implements FoodAbstract {
     @Override
