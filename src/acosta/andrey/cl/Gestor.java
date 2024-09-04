@@ -1,9 +1,9 @@
 package acosta.andrey.cl;
 
 import acosta.andrey.factory_Abstract.FoodAbstract;
-import acosta.andrey.fabrica_concreta.Factory_Meat;
-import acosta.andrey.fabrica_concreta.Factory_Pasta;
-import acosta.andrey.fabrica_concreta.Factory_Salad;
+import acosta.andrey.factory_concrect.Factory_Meat;
+import acosta.andrey.factory_concrect.Factory_Pasta;
+import acosta.andrey.factory_concrect.Factory_Salad;
 import acosta.andrey.product_abstract.Food;
 
 import java.util.ArrayList;
